@@ -1,14 +1,14 @@
 <?php 
     function get_categories() {
         global $db;
-        $query = 'SELECT * FROM categories ORDER BY categoryID';
+        $query = 'SELECT * FROM categories ORDER BY categoryName';
         $statement = $db->prepare($query);
         $statement->execute();
         $categories = $statement->fetchAll();
         $statement->closeCursor();
         return $categories;
     }
-
+/*
     function get_category_name($category_id) {
         global $db;
         $query = 'SELECT * FROM categories WHERE categoryID = :category_id';
@@ -40,4 +40,5 @@
         $statement->execute();
         $statement->closeCursor();
     }
+    */
 ?>
