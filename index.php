@@ -26,13 +26,13 @@
         $category_name = get_category_name($category_id);
 
         $quotes = get_all_quotes($sort);
-        // apply make filter 
+        // apply author filter 
         if ($author_name != NULL && $author_name != FALSE) {
             $quotes = array_filter($quotes, function($array) use ($author_name) {
                 return $array["author"] == $author_name;
             });
         }
-        // apply type filter
+        // apply category filter
         if ($category_id != NULL && $category_id != FALSE) {
             $quotes = array_filter($quotes, function($array) use ($category_name) {
                 return $array["categoryName"] == $category_name;
