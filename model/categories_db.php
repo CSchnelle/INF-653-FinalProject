@@ -20,7 +20,7 @@
         $category_name = $category['categoryName'];
         return $category_name;
     }
-
+*/
     function delete_category($category_id) {
         global $db;
         $query = 'DELETE FROM categories WHERE categoryID = :category_id';
@@ -40,5 +40,5 @@
         $statement->execute();
         $statement->closeCursor();
     }
-    */
+    
 ?>
