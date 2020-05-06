@@ -76,6 +76,5 @@
             </p>     
         <?php } ?>
     </section>
-    <?php include 'view/qd-links.php'; ?>
 </main>
 <script defer src="view/js/main.js" type="text/javascript"></script>
