@@ -1,4 +1,4 @@
-<?php include 'view/header-admin.php'; ?>
+<?php include 'util/valid_admin.php'; ?>
 <main>
     <h2>Author List</h2>
     <section>
@@ -42,6 +42,6 @@
     <section class="qdlinks">
         <p><a href="qd-admin.php">Back to Admin Quote List</a></p>
         <p><a href="qd-admin.php?action=show_add_form">Add a quote to database</a></p>
-        <p><a href="qd-admin.php?action=list_authors">View/Edit Authors</a></p>
+        <p><a href="qd-admin.php?action=list_categories">View/Edit Categories</a></p>
     </section>
 </main>
