@@ -1,4 +1,4 @@
-<?php include 'view/header-admin.php'; ?>
+<?php require_once('util/valid_admin.php'); ?>
 <main>
     <h2>Category List</h2>
     <section>
@@ -13,8 +13,8 @@
                     <td>
                         <form action="qd-admin.php" method="post">
                             <input type="hidden" name="action" value="delete_category">
-                            <input type="hidden" name="category_id"
-                                value="<?php echo $type['categoryID']; ?>"/>
+                            <input type="hidden" name="categoryID"
+                                value="<?php echo $category['categoryID']; ?>"/>
                             <input type="submit" value="Remove" class="button red" />
                         </form>
                     </td>
@@ -36,7 +36,7 @@
             <input type="text" name="category_name" max="20" required><br>
 
             <label id="blankLabel">&nbsp;</label>
-            <input id="add_type_button" type="submit" class="button blue" value="Add Type"><br>
+            <input id="add_category_button" type="submit" class="button blue" value="Add Category"><br>
         </form>
     </section>
     <section class="qdlinks">
