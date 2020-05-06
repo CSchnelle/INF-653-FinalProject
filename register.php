@@ -27,7 +27,7 @@
     <body>
         <?php if ($firstname == NULL) { ?>
                 
-            <form action="" method="get" id="register_form">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get" id="register_form">
                 <label for="firstname">Please enter your firstname:</label>
                 <input type="text" id="firstname" name="firstname" maxlength="50" required>
                 <input type="submit" value="Register" class="button blue">
