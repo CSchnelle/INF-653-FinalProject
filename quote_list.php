@@ -8,7 +8,7 @@
                     <select name="author">
                         <option value="0">View All Authors</option>
                         <?php foreach ($authors as $author) : ?>
-                            <option value="<?php echo $author['author']; ?>" <?php echo ($author_name == $author['author'] ? "selected" : false)?>>
+                            <option value="<?php echo $author['author']; ?>" <?php echo ($authorName == $author['author'] ? "selected" : false)?>>
                                 <?php echo $author['author']; ?>
                             </option>
                         <?php endforeach; ?>
@@ -17,10 +17,10 @@
 
                 <?php if ( sizeof($categories) != 0) { ?>
                     <label>Category:</label>
-                    <select name="category_id">
+                    <select name="categoryID">
                         <option value="0">View All Categories</option>
                         <?php foreach ($categories as $category) : ?>
-                            <option value="<?php echo $category['categoryID']; ?>" <?php echo ($category_name == $category['categoryName'] ? "selected" : false)?>>
+                            <option value="<?php echo $category['categoryID']; ?>" <?php echo ($categoryName == $category['categoryName'] ? "selected" : false)?>>
                                 <?php echo $type['categoryName']; ?>
                             </option>
                         <?php endforeach; ?>
