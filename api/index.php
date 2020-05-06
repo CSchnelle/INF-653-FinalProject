@@ -1,10 +1,10 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
-    $first = trim(filter_input(INPUT_GET, 'first'));
-    $last = trim(filter_input(INPUT_GET, 'last'));
+    $authorID = trim(filter_input(INPUT_GET, 'authorID'));
+    $categoryID = trim(filter_input(INPUT_GET, 'categoryID'));
 
-    $data = array("first"=>$first, "last"=>$last);
+    $data = array("authorID"=>$authorID, "categoryID"=>$categoryID);
     header('Content-Type: application/json');
     echo json_encode($data);
 
@@ -27,10 +27,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     } else {
 
-        $first = trim(filter_input(INPUT_POST, 'first'));
-        $last = trim(filter_input(INPUT_POST, 'last'));
+        $authorID = trim(filter_input(INPUT_POST, 'authorID'));
+        $categoryID = trim(filter_input(INPUT_POST, 'categoryID'));
 
-        $data = array("first"=>$first, "last"=>$last);
+        $data = array("authorID"=>$authorID, "categoryID"=>$categoryID);
         header('Content-Type: application/json');
         echo json_encode($data);
     } 
