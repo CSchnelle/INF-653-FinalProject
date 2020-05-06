@@ -21,7 +21,6 @@
         $sort = filter_input(INPUT_GET, 'sort');
 
         
-        $sort = ($sort == "year") ? "year" : "price";
 
         $category_name = get_category_name($category_id);
 
