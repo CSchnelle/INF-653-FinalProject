@@ -14,10 +14,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     $authorID = trim(filter_input(INPUT_GET, 'authorID'));
     $categoryID = trim(filter_input(INPUT_GET, 'categoryID'));
-
-    $data = array("authorID"=>$authorID, "categoryID"=>$categoryID);
+    $quotes = get_quotes($authorID, $categoryID);
     header('Content-Type: application/json');
-    echo json_encode($data);
+    echo json_encode($quotes);
 
 } else if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -30,9 +29,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     } else if ($_SERVER["CONTENT_TYPE"] == "application/json") {
 
         $json = file_get_contents('php://input');
-
         $data = json_decode($json);
-
+        $categoryID = htmlspecialchars(strip_tags($data->categoryID));
+        $authorID = htmlspecialchars(strip_tags($data->authorID));
+        $quotes = htmlspecialchars(strip_tags($data->quoteText));
         header('Content-Type: application/json');
         echo json_encode($data);
 
