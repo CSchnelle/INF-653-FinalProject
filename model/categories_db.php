@@ -8,35 +8,23 @@
         $statement->closeCursor();
         return $categories;
     }
-/*
-    function get_category_name($category_id) {
+
+    function delete_category($categoryID) {
         global $db;
-        $query = 'SELECT * FROM categories WHERE categoryID = :category_id';
+        $query = 'DELETE FROM categories WHERE categoryID = :categoryID';
         $statement = $db->prepare($query);
-        $statement->bindValue(':category_id', $category_id);
-        $statement->execute();
-        $category = $statement->fetch();
-        $statement->closeCursor();
-        $category_name = $category['categoryName'];
-        return $category_name;
-    }
-*/
-    function delete_category($category_id) {
-        global $db;
-        $query = 'DELETE FROM categories WHERE categoryID = :category_id';
-        $statement = $db->prepare($query);
-        $statement->bindValue(':category_id', $category_id);
+        $statement->bindValue(':categoryID', $categoryID);
         $statement->execute();
         $statement->closeCursor();
     }
 
-    function add_category($category_name) {
+    function add_category($categoryName) {
         global $db;
         $query = 'INSERT INTO categories (categoryName)
               VALUES
                  (:categoryName)';
         $statement = $db->prepare($query);
-        $statement->bindValue(':categoryName', $category_name);
+        $statement->bindValue(':categoryName', $categoryName);
         $statement->execute();
         $statement->closeCursor();
     }
